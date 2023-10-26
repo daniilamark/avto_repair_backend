@@ -2,17 +2,21 @@
   "name": "avto_repair_backend",
   "version": "1.0.0",
   "description": "diplom daniilamark",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/index"
   },
   "author": "daniilamark@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.1.0",
-    "mongoose": "^7.6.3"
+    "mongoose": "^7.6.3",
+    "nodemon": "^3.0.1"
   }
 }
