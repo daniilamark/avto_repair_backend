@@ -28,10 +28,16 @@ class UserServices{
     static async getUserByEmail(email){
         try{
             return await UserModel.findOne({email});
+            console.log(await UserModel.findOne({email}));
         }catch(err){
             console.log(err);
         }
     }
+
+    // static async getUserCarList(userId){
+    //     const carList = await CarModel.find({userId})
+    //     return carList;
+    // }
 
     static async checkUser(email){
         try {

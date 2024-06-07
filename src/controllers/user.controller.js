@@ -12,23 +12,11 @@ exports.registration = async (req, res, next) => {
 
         res.json({ status: true, success: 'User registered successfully' });
 
-
     } catch (err) {
         console.log("---> err -->", err);
         next(err);
     }
 }
-
-// exports.updateUser = async (req, res, next) => {
-//     try {
-//         const { name, last_name } = req.body;
-//         let userData = await UserServices.updateUser(name, last_name);
-//         res.json({status: true, success: userData});
-//     } catch (error) {
-//         console.log(error, 'err---->');
-//         next(error);
-//     }
-// }
 
 exports.login = async (req, res, next) => {
     try {
@@ -64,3 +52,21 @@ exports.login = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.getUser =  async (req, res, next)=>{
+    try {
+        const { email } = req.body;
+        
+        let user = await UserServices.checkUser(email);
+        let name = user['name'];
+        let last_name = user['last_name'];
+        // let userData = await UserService.getUserByEmail(email);
+        console.log(name);
+
+        res.json({status: true, success:name+" "+ last_name});
+    } catch (error) {
+        console.log(error, 'err---->');
+        next(error);
+    }
+}
+

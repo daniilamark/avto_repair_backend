@@ -3,6 +3,7 @@ const UserController = require("../controllers/user.controller");
 
 router.post('/registration', UserController.registration);
 router.post('/login', UserController.login);
-//router.post('/updateUser', UserController.updateUser);
+router.get('/getUser', UserController.getUser);
+// router.post('/updateUser', UserController.updateUser);
 
 module.exports = router;
